@@ -1,0 +1,7 @@
+/*IMPORTANDO FUENTES DE GOOGLE FONTS*/
+    /*
+        Se busca en https://fonts.google.com 'poppins'
+        Se seleccionan el light 300, regular 400, medium 500, semi-bold 600
+        Seleccionar el raddio @Import y copiar el texto
+    */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
