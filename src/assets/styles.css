@@ -5,3 +5,189 @@
         Seleccionar el raddio @Import y copiar el texto
     */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/*Aplicable a todo*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+/*
+    Aplicable a los DIV de clase sidebar
+    Es todo el cuadro posicionado al lado izquierdo
+*/
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%; /*ocupa toda la altura de la pantalla*/
+    width: 260px; /*ocupa 260 pixeles de izquierda a derecha*/
+    background: #11101d;
+
+}
+
+/*
+    Aplicable a los DIV de clase logo-details dentro de un sidebar
+*/
+.sidebar .logo-details{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*
+    Aplicable a una etiqueta i dentro de un logo-details dentro de un sidebar
+*/
+.sidebar .logo-details i{
+    position: relative; /*Activamos position relative para mover su posicion origial*/
+    left: 30px; /*con position relative activo movemos cierto espacio relativo a su posicion original*/
+    font-size: 30px;
+    color: #fff;
+    height: 50px;
+    min-width: 78px;/*se pone un ancho minimo para que no se haga mas chiquito*/
+    text-align: center;/*alinear el logo en el centro horizontal*/
+    line-height: 50px;/*alinear el logo en el centro vergical*/
+}
+
+/*
+    Aplicable a un DIV de clase logo_name dentro de un logo-details dentro de un sidebar
+*/
+.sidebar .logo-details .logo_name{
+    position: relative;/*Activamos position relative para mover su posicion origial*/
+    left: 30px;/*con position relative activo movemos cierto espacio relativo a su posicion original*/
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+
+/*
+    Aplicable a DIV de clase nav-links dentro de un sidebar
+*/
+.sidebar .nav-links{
+    height: 100%;
+    padding-top: 30px; /*Para dejar espacio entre el top del DIV y el contenido*/
+}
+
+/*
+    Aplicable a la etiqueta li dentro de nav-links dentro de un sidebar
+*/
+.sidebar .nav-links li{
+    position: relative;
+    list-style: none;
+    transition: all 0.4s ease; /*Establece el tiempo en que se ejecutan las transiciones de un estado a otro*/
+}
+
+
+/*
+    Aplicable a la etiqueta li dentro de nav-links dentro de sidebar cuando se pone el mouse encima
+*/
+.sidebar .nav-links li:hover{
+    background: #1d1b31;
+}
+
+/*
+    Aplicable a los DIV de clase icon-links dentro de etiqueta li dentro de nav-links dentro de sidebar
+*/
+.sidebar .nav-links li .icon-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*
+    Aplicable a las etiquetas i dentro de etiquetas li dentro de un nav-links dentro de un sidebar
+*/
+.sidebar .nav-links li i{
+    height: 50px;
+    min-width: 78px;/*se pone un ancho minimo para que no se haga mas chiquito*/
+    text-align: center;/*alinear el logo en el centro horizontal*/
+    line-height: 50px;/*alinear el logo en el centro vergical*/
+    color: #fff; /*Esto pinta los iconos*/
+    font-size: 20px;
+}
+
+/*
+    Aplicable a las etiquetas a dentro de etiquetas li dentro de un nav-links dentro de un sidebar
+*/
+.sidebar .nav-links li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/*
+    Aplicable a los SPAN de clase link_name dentro de etiquetas a dentro de etiquetas li dentro de un nav-links dentro de un sidebar
+*/
+.sidebar .nav-links li a .link_name{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+.sidebar .nav-links li .sub-menu{
+    padding: 6px 6px 14px 80px;
+    margin-top: -10px;
+    background: #1d1b31;
+    /*display: none;*/ /*Esconder el menu por defecto*/
+}
+
+.sidebar .nav-links li .sub-menu a{
+    color: #fff;
+    font-size: 15px;
+    padding: 5px 0;
+    white-space: nowrap;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover{
+    opacity: 1;
+}
+
+/*
+    La clase close ya existia en bootstrap entonces se puso closed para que no se mezclaran
+*/
+.sidebar.closed .nav-links li .sub-menu{
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-top: 0;
+    padding: 10px 20px;
+    border-radius: 0 6px 6px 0; /*borde de cada esquina de un div IA DA DA IA*/
+    transition: all 0.4s ease;
+    opacity: 0;/*Desaparecer el menu*/
+    pointer-events: none;/*Evitar que sea tocado con el mouse*/
+}
+.sidebar.closed .nav-links li:hover .sub-menu{
+    top: 0;
+    opacity: 1;/*Mostrar el menu*/
+    pointer-events: auto;/*permitir que hayan eventos con el mouse*/
+}
+
+.sidebar .nav-links li .sub-menu .link_name{
+    display: none;
+}
+
+.sidebar.closed .nav-links li .sub-menu .link_name{
+    font-size: 18px;
+    opacity: 1;
+    display: block;
+}
+
+.sidebar .nav-links li .sub-menu.blank{
+    opacity: 1;
+    pointer-events: auto;
+    padding: 3px 20px 6px 16px;
+}
+.sidebar .nav-links li:hover .sub-menu.blank{
+    top: 50%;
+    transform: translateY(-50%);
+}
